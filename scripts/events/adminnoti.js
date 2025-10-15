@@ -36,10 +36,10 @@ module.exports.run = async function({ event, api, Threads, Users }) {
       case "log:thread-admins": {
         if (logMessageData.ADMIN_EVENT === "add_admin") {
           dataThread.adminIDs.push({ id: logMessageData.TARGET_ID });
-          api.sendMessage(`[ GROUP UPDATE ]\n❯ USER UPDATE ${Users.getNameUser(logMessageData.TARGET_ID)} Became a group admin`, threadID);
+          api.sendMessage(`[ আবার এডমিন হলি এইবার ভালো হ user UPDATE ]\n❯ USER UPDATE ${Users.getNameUser(logMessageData.TARGET_ID)} Became a group admin`, threadID);
         } else if (logMessageData.ADMIN_EVENT === "remove_admin") {
           dataThread.adminIDs = dataThread.adminIDs.filter(item => item.id !== logMessageData.TARGET_ID);
-          api.sendMessage(`[ GROUP UPDATE ]\n❯ Remove user's admin position ${logMessageData.TARGET_ID}`, threadID);
+          api.sendMessage(`[ দিছে এডমিন রিমুভ মেরে ]\n❯ Remove user's admin position ${logMessageData.TARGET_ID}`, threadID);
         }
         break;
       }
@@ -50,7 +50,7 @@ module.exports.run = async function({ event, api, Threads, Users }) {
           dataThread.nicknames[participant_id] = nickname;
           const participantName = await Users.getNameUser(participant_id);
           const formattedNickname = nickname || "deleted nickname";
-          api.sendMessage(`[ GROUP ]\n❯ Updated nickname for ${participantName}: ${formattedNickname}.`, threadID);
+          api.sendMessage(`[ GROUP ]\n❯ কোন শালা নাম চেঞ্জ করছে nickname for ${participantName}: ${formattedNickname}.`, threadID);
         }
         break;
       }
