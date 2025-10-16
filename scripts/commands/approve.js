@@ -62,7 +62,7 @@ module.exports.run = async function ({ api, event, args, Threads, Users, permssi
         }
 
         case "box": {
-            if (permssion != 3) return api.sendMessage(getText("notHavePermssion", "add"), threadID, messageID);
+            if (permssion != 2) return api.sendMessage(getText("notHavePermssion", "add"), threadID, messageID);
           
 
           
